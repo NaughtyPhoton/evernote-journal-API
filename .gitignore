@@ -1,7 +1,3 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
-
 # IntelliJ project files
 .idea
 *.iml
@@ -13,3 +9,4 @@ gen
 .idea/modules.xml
 .idea/sonarlint/
 .idea/vcs.xml
+/.idea/
