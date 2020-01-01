@@ -1,23 +1,26 @@
 from flask import Flask, jsonify, request
-import yaml
 
 from lookup.getLookup import get_lookup
+from src.content import Content
+from src.title import Title
 
 app = Flask(__name__)
 
 lookup = get_lookup()
 
 
-@app.route('/getTitle', methods=['get'])
+@app.route('/get_title', methods=['get'])
 def get_title():
-    title = {'title': '2019/12/31: Daily', 'yesterday_title': '2019/12/30: Daily'}
-    return jsonify(title)
+    title = Title(lookup)
+    return jsonify(title.__dict__)
 
 
-@app.route('/getTitle', methods=['get'])
+@app.route('/get_content', methods=['get'])
 def get_content():
-    content = {'content': '<div>Some text delivered via <p style="color: red">PYTHON</p></div>'}
-    return jsonify(content)
+    request_data = request.get_json()
+    yesterday_html = request_data['yesterday_html']
+    content = Content(yesterday_html)
+    return jsonify(content.__dict__)
 
 
 app.run(port=5000)
