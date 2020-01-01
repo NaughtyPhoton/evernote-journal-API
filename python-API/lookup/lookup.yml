@@ -2,3 +2,6 @@ name: "User's Name"
 title_prefix: ""
 title_suffix: ": Daily"
 notebook_name: "Daily"
+tag_list:
+  - "Daily"
+  - "Journal"

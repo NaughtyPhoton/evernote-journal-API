@@ -17,8 +17,7 @@ def get_title():
 
 @app.route('/get_content', methods=['get'])
 def get_content():
-    request_data = request.get_json()
-    yesterday_html = request_data['yesterday_html']
+    yesterday_html = request.args.get('yesterday_html')
     content = Content(yesterday_html)
     return jsonify(content.__dict__)
 
