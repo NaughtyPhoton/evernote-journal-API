@@ -12,3 +12,5 @@ gen
 /.idea/
 appleScript/.DS_Store
 python-API/lookup/lookup-override.yml
+/venv/
+/python-API/lookup/lookup-override.yml
