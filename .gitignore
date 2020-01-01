@@ -11,3 +11,4 @@ gen
 .idea/vcs.xml
 /.idea/
 appleScript/.DS_Store
+python-API/lookup/lookup-override.yml
