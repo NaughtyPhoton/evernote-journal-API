@@ -5,6 +5,7 @@ from abc import ABC
 from datetime import datetime
 from typing import List
 
+import pytz
 import requests
 from html.parser import HTMLParser
 
@@ -41,9 +42,9 @@ class Content:
             else:
                 self.failed_goals.append(goal)
 
-    @staticmethod
-    def _get_date_string():
-        date = datetime.now()
+    def _get_date_string(self):
+        timezone = pytz.timezone(self.lookup.get('timezone'))
+        date = timezone.localize(datetime.now())
         date_string = date.strftime("%A %d, %Y")
         return date_string
 
