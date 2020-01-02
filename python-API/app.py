@@ -21,7 +21,7 @@ class GetContent(Resource):
     def get(self):
         yesterday_html = request.args.get('yesterday_html')
         content = Content(lookup, yesterday_html)
-        return jsonify(content.__dict__)
+        return jsonify({'content': content.html_content})
 
 
 api.add_resource(GetTitle, "/get_title")
