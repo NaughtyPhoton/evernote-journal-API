@@ -19,7 +19,7 @@ class GetTitle(Resource):
 
 class GetContent(Resource):
     def get(self):
-        yesterday_html = request.get_json().get('yesterday_html')
+        yesterday_html = request.args.get('yesterday_html')
         content = Content(lookup, yesterday_html)
         return jsonify(content.__dict__)
 
