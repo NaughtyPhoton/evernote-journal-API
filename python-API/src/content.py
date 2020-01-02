@@ -136,7 +136,10 @@ class GoalFactory(HTMLParser, ABC):
     text_to_start = "Today's Goals:"
     started: bool = False
     finished: bool = False
-    list_of_goals: List[Goal] = []
+
+    def __init__(self):
+        super().__init__()
+        self.list_of_goals: List[Goal] = []
 
     def handle_starttag(self, tag, attrs):
         if self.started and not self.finished:
