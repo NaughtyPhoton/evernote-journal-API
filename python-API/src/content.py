@@ -26,7 +26,7 @@ class Content:
         self._get_goals_from_yesterday()
         self.weather_1, self.weather_2 = self._get_weather()
         self.quote_content, self.quote_author = self._get_quote()
-        self.github_string = GitHubData(lookup['github_username']).last_7_days
+        self.github_string = GitHubData(lookup['github_username'], lookup).message
 
         self.html_content: str = self._get_content_for_today()
 
